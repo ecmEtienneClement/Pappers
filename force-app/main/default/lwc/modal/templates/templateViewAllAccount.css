@@ -1,0 +1,13 @@
+lightning-card {
+  --slds-c-card-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+  --slds-c-card-radius-border: 5px;
+}
+
+.nocustome-box {
+  border: none;
+}
+.custom_spinner {
+  position: relative;
+  width: 100%;
+  background: none;
+}

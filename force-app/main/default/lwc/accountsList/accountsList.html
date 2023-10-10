@@ -1,0 +1,28 @@
+<template>
+  <template lwc:if={accounts}>
+    <div class="slds-grid slds-wrap">
+      <template for:each={accounts} for:item="account">
+        <div
+          key={account.Id}
+          class="slds-col slds-size_4-of-12 slds-var-p-horizontal_xx-small slds-var-m-top_medium"
+        >
+          <c-account-card
+            onviewall={onViewAllList}
+            onedit={onEditList}
+            account={account}
+          ></c-account-card>
+        </div>
+      </template>
+    </div>
+    <template lwc:if={accountsSearchIsNull}>
+      <div class="slds-theme_warning">
+        <p class="slds-var-m-left_small">Pas de compte correspondant</p>
+      </div>
+    </template>
+  </template>
+  <template lwc:else>
+    <div class="slds-theme_default">
+      <p class="slds-var-m-left_small">Veiller patienter ....</p>
+    </div>
+  </template>
+</template>

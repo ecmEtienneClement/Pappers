@@ -1,0 +1,94 @@
+<template>
+  <lightning-modal-header label="View All Account"> </lightning-modal-header>
+  <lightning-modal-body>
+    <div>
+      <!--        PARENT ACCOUNT-->
+      <template lwc:if={parentAccount}>
+        <lightning-card
+          title={parentAccount.Name}
+          icon-name="standard:account"
+          variant="base"
+        >
+          <div class="custome-box slds-box">
+            <!-- Row Country  -->
+            <div class="slds-grid slds-wrap">
+              <div class="slds-text-title_caps slds-col slds-size_12-of-12">
+                <template lwc:if={nameSiret}>
+                  <lightning-badge
+                    label={nameSiret}
+                    class="slds-badge_lightest"
+                    icon-alternative-text="The Country"
+                  ></lightning-badge>
+                </template>
+              </div>
+            </div>
+
+            <!-- Row Street  -->
+            <div class="slds-grid slds-wrap">
+              <div class="slds-col slds-size_12-of-12">
+                {parentAccount.BillingAddress.street}
+              </div>
+            </div>
+
+            <!-- Row City  -->
+            <div class="slds-grid slds-wrap">
+              <div class="slds-col slds-size_12-of-12">
+                {parentAccount.BillingAddress.city}
+              </div>
+            </div>
+
+            <!-- Row Effectif Max  -->
+            <div class="slds-grid slds-wrap">
+              <div class="slds-col slds-size_12-of-12">
+                <b>Effectif Max :</b> {parentAccount.Effectif_Max__c}
+              </div>
+            </div>
+            <!-- Row Effectif Min  -->
+            <div class="slds-grid slds-wrap">
+              <div class="slds-col slds-size_12-of-12">
+                <b>Effectif Min :</b> {parentAccount.Effectif_Min__c}
+              </div>
+            </div>
+          </div>
+        </lightning-card>
+      </template>
+
+      <!--         CHILD ACCOUNT-->
+      <template lwc:if={childAccount}>
+        <div class="slds-grid">
+          <div
+            style="height: 250px"
+            class="slds-scrollable_y slds-col slds-size_12-of-12"
+          >
+            <!-- sldsValidatorIgnoreNextLine -->
+            <lightning-datatable
+              onsave={editChildAccount}
+              key-field="Id"
+              columns={columns}
+              data={childAccount}
+            ></lightning-datatable>
+          </div>
+        </div>
+      </template>
+
+      <!--        LOADER-->
+      <template lwc:if={loader}>
+        <div class="custom_spinner slds-var-m-top_large">
+          <lightning-spinner
+            alternative-text="Loading"
+            size="medium"
+            variant="base"
+          ></lightning-spinner>
+        </div>
+      </template>
+    </div>
+  </lightning-modal-body>
+  <lightning-modal-footer>
+    <lightning-button
+      class="slds-is-relative slds-var-p-horizontal_large"
+      variant="brand-outline"
+      label="Ok"
+      onclick={cancel}
+    ></lightning-button>
+  </lightning-modal-footer>
+</template>

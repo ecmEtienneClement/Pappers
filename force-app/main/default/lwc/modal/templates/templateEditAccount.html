@@ -1,0 +1,18 @@
+<template>
+  <lightning-modal-header label="Edit Account"> </lightning-modal-header>
+  <lightning-modal-body>
+    <template lwc:if={accountId}>
+      <lightning-card icon-name="standard:account" variant="base">
+        <lightning-record-form
+          columns="2"
+          object-api-name={objectApiName}
+          record-id={accountId}
+          fields={fields}
+          mode="edit"
+          onsuccess={editSuccess}
+          oncancel={cancel}
+        ></lightning-record-form>
+      </lightning-card>
+    </template>
+  </lightning-modal-body>
+</template>

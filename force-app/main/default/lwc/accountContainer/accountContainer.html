@@ -1,0 +1,37 @@
+<template>
+  <div style="background-color: white" class="slds-box">
+    <!--        Search-->
+    <c-account-header-container
+      onsearch={handleKeyUp}
+    ></c-account-header-container>
+    <!-- <div class="slds-grid slds-var-m-bottom_medium">
+      <div class="slds-col slds-size_10-of-12">
+        <lightning-input
+          onkeyup={handleKeyUp}
+          type="search"
+          name="enter-search"
+          label="Search by Name  Siren Siret"
+        ></lightning-input>
+      </div>
+      <div class="slds-col slds-size_2-of-12 slds-var-m-top_large">
+        <lightning-button
+          class="slds-var-m-horizontal_small"
+          variant="brand-outline"
+          label="All Accounts"
+          onclick={accountsSaveAfterSearch}
+        ></lightning-button>
+      </div>
+    </div> -->
+
+    <!--        Container List-->
+    <div class="slds-grid">
+      <div class="slds-col slds-size_12-of-12">
+        <c-accounts-list
+          onedit={onEditContainer}
+          onviewall={onViewAllContainer}
+          oncardshowdetails={cardShowDetails}
+        ></c-accounts-list>
+      </div>
+    </div>
+  </div>
+</template>

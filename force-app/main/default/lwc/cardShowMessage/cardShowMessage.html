@@ -1,0 +1,27 @@
+<template>
+  <lightning-card>
+    <!--  Row -->
+    <div
+      class="message custome_slds-grid slds-grid slds-wrap slds-var-m-horizontal_x-small"
+    >
+      <!--  First Col 12 -->
+      <div class="slds-col slds-size_12-of-12">
+        <lightning-icon
+          class="slds-var-m-around_small"
+          icon-name={icon}
+          size="small"
+          alternative-text="Indicates approval"
+        >
+        </lightning-icon>
+      </div>
+      <!-- Last Col 12 -->
+      <div
+        class="message-text slds-col slds-size_12-of-12 slds-var-m-bottom_x-small"
+      >
+        <lightning-formatted-rich-text
+          value={message}
+        ></lightning-formatted-rich-text>
+      </div>
+    </div>
+  </lightning-card>
+</template>

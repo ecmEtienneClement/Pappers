@@ -1,0 +1,47 @@
+<template>
+  <template lwc:if={account}>
+    <lightning-card
+      title={account.Name}
+      icon-name="standard:account"
+      variant="base"
+    >
+      <div class="custome-box slds-box">
+        <!-- Row Country  -->
+        <div class="slds-grid slds-wrap">
+          <div class="slds-text-title_caps slds-col slds-size_12-of-12">
+            <template lwc:if={nameSiret}>
+              <lightning-badge
+                label={nameSiret}
+                class="slds-badge_lightest"
+                icon-alternative-text="The Country"
+              ></lightning-badge>
+            </template>
+          </div>
+        </div>
+
+        <!-- Row Street  -->
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_12-of-12">
+            {account.BillingAddress.street}
+          </div>
+        </div>
+
+        <!-- Row City  -->
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_12-of-12">
+            {account.BillingAddress.city}
+          </div>
+        </div>
+      </div>
+      <div slot="footer">
+        <!-- Row Date created  -->
+        <div class="slds-grid slds-text-align_left">
+          <div class="slds-col slds-size_12-of-12">
+            <a onclick={edit} class="slds-var-m-left_small"> Edit</a>
+            <a onclick={viewAll} class="slds-var-m-left_small"> View All</a>
+          </div>
+        </div>
+      </div>
+    </lightning-card>
+  </template>
+</template>

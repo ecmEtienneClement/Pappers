@@ -1,0 +1,14 @@
+:host {
+  --color: transparent;
+  --border-radius: 5px;
+}
+
+lightning-icon {
+  --iconColor: blue;
+  --iconBg: white;
+  --slds-c-icon-color-foreground-default: var(--iconColor);
+  --slds-c-icon-color-background: var(--iconBg);
+}
+.custome_slds-grid {
+  border-radius: var(--border-radius);
+}

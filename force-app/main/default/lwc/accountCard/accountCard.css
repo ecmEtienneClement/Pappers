@@ -1,0 +1,11 @@
+lightning-card {
+  --slds-c-card-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+  --slds-c-card-radius-border: 5px;
+}
+
+.custome-box {
+  border: none;
+}
+a {
+  border: none;
+}

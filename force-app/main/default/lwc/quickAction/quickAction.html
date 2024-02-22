@@ -1,0 +1,144 @@
+<template>
+  <!--  -->
+  <template lwc:if={nextComponent}>
+    <c-enrichirmapappers
+      siren={siren}
+      siret={siret}
+      onclose={handleCloseNextComponent}
+      onconfirm={handleConfirmModalSecondaire}
+    ></c-enrichirmapappers>
+  </template>
+  <!--  -->
+  <template lwc:else>
+    <lightning-card title="SIREN et SIRET">
+      <div
+        class="slds-grid slds-wrap slds-var-p-left_xx-large slds-var-p-right_xx-large"
+      >
+        <!-- COLONE SIREN -->
+        <div class="slds-col slds-size_12-of-12">
+          <label class="slds-form-element__label" for="text-input-id-46">
+            <abbr class="slds-required" title="required">* </abbr>Siren</label
+          >
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-id-46"
+              value={siren}
+              placeholder="siren…"
+              class="slds-input"
+            />
+          </div>
+        </div>
+        <!-- COLONNE SIRET -->
+        <div class="slds-col slds-size_12-of-12">
+          <label class="slds-form-element__label" for="text-input-id-47">
+            <abbr class="slds-required" title="required">* </abbr>Siret</label
+          >
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-id-47"
+              value={siret}
+              placeholder="siret…"
+              class="slds-input"
+            />
+          </div>
+        </div>
+      </div>
+      <!--COLONNE BOUTON -->
+      <div slot="footer" class="slds-var-p-right_large">
+        <lightning-button
+          class="slds-float_right slds-var-m-bottom_small"
+          label="Pappers"
+          onclick={handleNextComponent}
+        ></lightning-button>
+      </div>
+    </lightning-card>
+  </template>
+
+  <!-- <template if:true={showModal}>
+    <c-enrichirmapappers></c-enrichirmapappers>
+  </template> -->
+</template>
+
+<!-- <template>
+  <lightning-button label="Quick Action" onclick={openModal}></lightning-button>
+  <template if:true={isModalOpen}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={closeModal}
+          >
+            <lightning-icon
+              icon-name="utility:close"
+              alternative-text="close"
+              size="small"
+            ></lightning-icon>
+          </button>
+          <h2 class="slds-text-heading_medium">SIREN et SIRET</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+          <div class="slds-form-element">
+            <div class="slds-grid slds-wrap">
+              <!- COLONE SIREN ->
+              <div class="slds-col slds-size_12-of-12">
+                <label class="slds-form-element__label" for="text-input-id-46">
+                  <abbr class="slds-required" title="required">* </abbr
+                  >Siren</label
+                >
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    id="text-input-id-46"
+                    value={siren}
+                    placeholder="siren…"
+                    class="slds-input"
+                  />
+                </div>
+              </div>
+              <!- COLONNE SIRET ->
+              <div class="slds-col slds-size_12-of-12">
+                <label class="slds-form-element__label" for="text-input-id-47">
+                  <abbr class="slds-required" title="required">* </abbr
+                  >Siret</label
+                >
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    id="text-input-id-47"
+                    value={siret}
+                    placeholder="siret…"
+                    class="slds-input"
+                  />
+                </div>
+              </div>
+              <!-COLONNE BOUTON ->
+              <div class="slds-col slds-size_12-of-12 slds-var-m-top_medium slds-float_right">
+                <lightning-button class="slds-float_right"
+                  label="Pappers"
+                  onclick={handleNextButtonClick}
+                ></lightning-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+  <template if:true={showModal}>
+    <c-enrichirmapappers></c-enrichirmapappers>
+  </template>
+  <template if:true={isSecondModalOpen}>
+    <c-enrichirmapappers
+      siren={siren}
+      siret={siret}
+      onclose={handleCloseModalSecondaire}
+      onconfirm={handleConfirmModalSecondaire}
+    ></c-enrichirmapappers>
+  </template>
+</template> -->

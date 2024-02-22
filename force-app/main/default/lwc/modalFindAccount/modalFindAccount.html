@@ -1,0 +1,71 @@
+<template>
+  <!-- this should be incapsulated in its own component, see https://developer.salesforce.com/docs/component-library/bundle/lightning-modal/documentation -->
+
+  <lightning-modal-header label="Account"></lightning-modal-header>
+  <lightning-modal-body>
+    <div class="slds-grid">
+      <div class="slds-col slds-size_full">
+        <template lwc:if={account}>
+          <lightning-card
+            title={account.Name}
+            icon-name="standard:account"
+            variant="base"
+          >
+            <div class="custome-box slds-box">
+              <!-- Row Country  -->
+              <div class="slds-grid slds-wrap">
+                <div class="slds-text-title_caps slds-col slds-size_12-of-12">
+                  <template lwc:if={nameSiret}>
+                    <lightning-badge
+                      label={nameSiret}
+                      class="slds-badge_lightest"
+                      icon-alternative-text="The Country"
+                    ></lightning-badge>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Row Street And City  -->
+              <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12">
+                  <label>Street</label>
+                  {account.BillingAddress.street}
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                  <label>City</label>
+                  {account.BillingAddress.city}
+                </div>
+              </div>
+
+              <!-- Row Code NAF And Siret -->
+              <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12">
+                  {account.Code_NAF__c}
+                </div>
+                <div class="slds-col slds-size_6-of-12">{account.Siret__c}</div>
+              </div>
+
+              <!-- Row Effectif_Max__c And Effectif_Min__c-->
+              <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12">
+                  <b>Effectif Max:</b> {account.Effectif_Max__c}
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                  <b>Effectif Min:</b> {account.Effectif_Min__c}
+                </div>
+              </div>
+            </div>
+          </lightning-card>
+        </template>
+      </div>
+    </div>
+  </lightning-modal-body>
+  <lightning-modal-footer
+    ><lightning-button
+      class="slds-var-p-around_medium"
+      variant="brand-outline"
+      label=" Ok "
+      onclick={handleClick}
+    ></lightning-button
+  ></lightning-modal-footer>
+</template>

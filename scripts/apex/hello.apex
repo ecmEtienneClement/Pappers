@@ -1,10 +1,16 @@
-// Use .apex files to store anonymous Apex.
-// You can execute anonymous Apex in VS Code by selecting the
-//     apex text and running the command:
-//     SFDX: Execute Anonymous Apex with Currently Selected Text
-// You can also execute the entire file by running the command:
-//     SFDX: Execute Anonymous Apex with Editor Contents
+String api_token = Label.ApiTokenPappers;
+String endpoint =
+  'https://api.pappers.fr/v1/entreprise?api_token=' +
+  api_token +
+  '&siren=' +
+  '65201405100724';
+HttpRequest req = new HttpRequest();
+HttpResponse res = new HttpResponse();
+Http ht = new Http();
+req.setHeader('Content-Type', 'application/json; charset=utf-8');
 
-string tempvar = 'Enter_your_name_here';
-System.debug('Hello World!');
-System.debug('My name is ' + tempvar);
+req.setEndpoint(endpoint);
+req.setMethod('GET');
+
+res = Ht.send(req);
+System.debug('response of request ***** : ' + res.getBody());

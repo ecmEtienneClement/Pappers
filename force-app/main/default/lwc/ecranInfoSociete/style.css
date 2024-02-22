@@ -1,0 +1,4 @@
+/* CSS de votre composant LWC */
+.myTableContainer lightning-datatable {
+    width: 100%; /* Assurez-vous que le conteneur parent a la largeur désirée */
+}

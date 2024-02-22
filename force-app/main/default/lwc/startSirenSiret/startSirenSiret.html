@@ -1,0 +1,61 @@
+<template>
+  <!-- Composant suivant a affiché  -->
+  <template lwc:if={nextComponent}>
+    <c-enrichirmapappers
+      siren={siren}
+      siret={siret}
+      onclose={handleCloseNextComponent}
+      onconfirm={handleConfirmModalSecondaire}
+    ></c-enrichirmapappers>
+  </template>
+  <!--  Info Siren et Siret -->
+  <template lwc:else>
+    <lightning-card title="SIREN et SIRET">
+      <div
+        class="slds-grid slds-wrap slds-var-p-left_xx-large slds-var-p-right_xx-large"
+      >
+        <!-- COLONE SIREN -->
+        <div class="slds-col slds-size_12-of-12">
+          <label class="slds-form-element__label" for="text-input-id-46">
+            <abbr class="slds-required" title="required">* </abbr>Siren</label
+          >
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-id-46"
+              value={siren}
+              placeholder="siren…"
+              class="slds-input"
+            />
+          </div>
+        </div>
+        <!-- COLONNE SIRET -->
+        <div class="slds-col slds-size_12-of-12">
+          <label class="slds-form-element__label" for="text-input-id-47">
+            <abbr class="slds-required" title="required">* </abbr>Siret</label
+          >
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-id-47"
+              value={siret}
+              placeholder="siret…"
+              class="slds-input"
+            />
+          </div>
+        </div>
+      </div>
+      <!--COLONNE BOUTON -->
+      <div slot="footer" class="slds-var-p-right_large">
+        <template lwc:if={pappersBtn}>
+            <lightning-button
+            class="slds-float_right slds-var-m-bottom_small"
+            label="Pappers"
+            onclick={handleNextComponent}
+            ></lightning-button>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+</template>
+

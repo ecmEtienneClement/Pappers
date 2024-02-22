@@ -1,0 +1,47 @@
+<template>
+  <template lwc:if={account}>
+    <lightning-card
+      title={account.Name}
+      icon-name="standard:account"
+      variant="base"
+    >
+      <div class="custome-box slds-box">
+        <div class="slds-grid slds-wrap">
+          <!-- Col Street  -->
+          <div class="slds-col slds-size_6-of-12"><b>BillingStreet</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.BillingStreet}</div>
+          <!-- Col City  -->
+          <div class="slds-col slds-size_6-of-12"><b>BillingCity</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.BillingCity}</div>
+          <!-- Col State  -->
+          <div class="slds-col slds-size_6-of-12"><b>BillingState</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.BillingState}</div>
+          <!-- Col Postale  -->
+          <div class="slds-col slds-size_6-of-12"><b>BillingPostalCode</b></div>
+          <div class="slds-col slds-size_6-of-12">
+            : {account.BillingPostalCode}
+          </div>
+          <!-- Col Contry  -->
+          <div class="slds-col slds-size_6-of-12"><b>BillingCountry</b> </div>
+          <div class="slds-col slds-size_6-of-12">: {account.BillingCountry}</div>
+
+          <!-- Col Effectif_Max  -->
+          <div class="slds-col slds-size_6-of-12"><b>Effectif_Max</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.Effectif_Max}</div>
+          <!-- Col Effectif_Min  -->
+          <div class="slds-col slds-size_6-of-12"><b>Effectif_Min</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.Effectif_Min}</div>
+          <!-- Col Siret  -->
+          <div class="slds-col slds-size_6-of-12"><b>Siret</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.Siret}</div>
+          <!-- Col SIREN  -->
+          <div class="slds-col slds-size_6-of-12"><b>SIREN</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.SIREN}</div>
+          <!-- Col Code_NAF  -->
+          <div class="slds-col slds-size_6-of-12"><b>Code_NAF</b></div>
+          <div class="slds-col slds-size_6-of-12">: {account.Code_NAF}</div>
+        </div>
+      </div>
+    </lightning-card>
+  </template>
+</template>
